@@ -11,6 +11,29 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      //hasMany to feeds model
+      users.hasMany(models.feeds, {
+        as: "feeds",
+        foreignKey: {
+          name: "idUser",
+        },
+      });
+
+      //hasMany to follows model
+      users.hasMany(models.follows, {
+        as: "followers",
+        foreignKey: {
+          name: "idFollower",
+        },
+      });
+
+      //hasMany to follows model
+      users.hasMany(models.follows, {
+        as: "followings",
+        foreignKey: {
+          name: "idFollowing",
+        },
+      });
     }
   }
   users.init({
