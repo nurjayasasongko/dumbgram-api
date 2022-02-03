@@ -11,12 +11,18 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      // belongsTo to users model
+      feeds.belongsTo(models.users, {
+        as: "user",
+        foreignKey: {
+          name: "idUser"
+        }
+      });
     }
   }
   feeds.init({
     fileName: DataTypes.STRING,
     caption: DataTypes.STRING,
-    like: DataTypes.INTEGER,
     idUser: DataTypes.INTEGER
   }, {
     sequelize,

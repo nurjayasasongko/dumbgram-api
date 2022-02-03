@@ -14,9 +14,6 @@ module.exports = {
       caption: {
         type: Sequelize.STRING
       },
-      like: {
-        type: Sequelize.INTEGER
-      },
       idUser: {
         type: Sequelize.INTEGER,
         references: {

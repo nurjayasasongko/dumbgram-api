@@ -21,7 +21,7 @@ module.exports = (sequelize, DataTypes) => {
 
       //hasMany to follows model
       users.hasMany(models.follows, {
-        as: "followers",
+        as: "followings",
         foreignKey: {
           name: "idFollower",
         },
@@ -29,7 +29,7 @@ module.exports = (sequelize, DataTypes) => {
 
       //hasMany to follows model
       users.hasMany(models.follows, {
-        as: "followings",
+        as: "followers",
         foreignKey: {
           name: "idFollowing",
         },
