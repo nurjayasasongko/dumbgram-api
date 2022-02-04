@@ -49,6 +49,6 @@ router.post('/comment', auth, addComment);
 
 // message route
 router.post('/message/:id', auth, addMessage);
-router.get('/feed/:id', auth, getMessage);
+router.get('/message-user/:id', auth, getMessage);
 
 module.exports = router;
