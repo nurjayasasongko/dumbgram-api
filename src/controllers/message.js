@@ -1,5 +1,5 @@
 const { users, messages } = require('../../models')
-const { Op, QueryTypes } = require('sequelize');
+const { Op } = require('sequelize');
 const Joi = require('joi');
 
 exports.addMessage = async (req, res) => {
