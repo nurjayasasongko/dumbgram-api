@@ -11,6 +11,7 @@ const {
   getFollowers, 
   getFollowing
 } = require('../controllers/user');
+
 const {
   addFeed,
   getFeedByFollow,
@@ -19,6 +20,7 @@ const {
   getComments,
   addComment
 } = require('../controllers/feed');
+
 const { addMessage, getMessage } = require('../controllers/message');
 
 // middleware
@@ -38,8 +40,8 @@ router.get('/followers/:id', getFollowers);
 router.get('/followings/:id', getFollowing);
 
 // feed route
-router.post('/feed', auth, uploadFile('fileName'), addFeed);
-router.get('/feed/:id', auth, getFeedByFollow);
+router.post('/feed', auth, uploadFile("image"), addFeed);
+router.get('/feed', auth, getFeedByFollow);
 router.get('/feeds', getAllFeed);
 router.post('/like', auth, addLike);
 router.get('/comments/:id', auth, getComments);

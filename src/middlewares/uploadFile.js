@@ -17,7 +17,7 @@ exports.uploadFile = (imageFile) => {
     if (file.fieldname === imageFile) {
       if (!file.originalname.match(/\.(jpg|JPG|JPEG|png|PNG|svg)$/)) {
         req.fileValidationError = {
-          message: 'Only image filesare allowed !'
+          message: 'Only image fileshare allowed !'
         };
         
         return cb(new Error('Only image files are allowed !'), false);
@@ -52,14 +52,14 @@ exports.uploadFile = (imageFile) => {
 
       if (!req.files && !err) {
         return res.status(400).send({
-          message: 'Please select ile to upload'
+          message: 'Please select file to upload'
         });
       }
 
       if (err) {
         if (err.code === 'LIMIT_FILE_SIZE') {
           return res.status(400).send({
-            message: 'Max file sized is 10MB'
+            message: `Max file sized is ${sizeInMB}`
           });
         }
         return res.status(400).send(err);

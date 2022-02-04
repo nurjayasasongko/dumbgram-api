@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       //hasMany to feeds model
       users.hasMany(models.feeds, {
-        as: "feeds",
+        as: "feed",
         foreignKey: {
           name: "idUser",
         },
